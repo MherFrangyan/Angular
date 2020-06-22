@@ -1,1 +1,61 @@
-<p>demo2 works!</p>
+<div class="container">
+    <br>
+<h5><mark>Cars:</mark> {{name}} <small>{{model}}</small></h5>
+<div class="alert alert-success">
+    <p>Cars option</p>
+    <ul>
+        <li><p>Speed: <strong>{{speed}} </strong>km</p></li>
+        <li><p>Car Color: <strong>{{colors.car}}</strong></p></li>
+        <li><p>Salon Color: <strong>{{colors.salon}}</strong></p></li>
+        <li><p>Wheels Color: <strong>{{colors.wheels}}</strong></p></li>
+    </ul>
+</div>
+
+<h5>Editing an Object</h5>
+<button class="btn btn-danger d-block mt-3" (click) = 'openBlock()'>Editing</button>
+<br>
+<form *ngIf = openBl>
+    <div class="form-group">
+        <input type="text" class="form-control" placeholder="Cars" [(ngModel)] = "name" name="name">
+        <br>
+        <input type="text" class="form-control" placeholder="Model" [(ngModel)] = "model" name="model">
+        <br>
+        <input type="number" class="form-control" placeholder="Speed" [(ngModel)] = "speed" name="speed">
+        <br>
+        <input type="text" class="form-control" placeholder="Car Color" [(ngModel)] = "colors.car" name="car">
+        <br>
+        <input type="text" class="form-control" placeholder="Salon Color"  [(ngModel)] = "colors.salon" name="salon">
+        <br>
+        <input type="text" class="form-control" placeholder="Wheels Color"  [(ngModel)] = "colors.wheels" name="wheels">
+
+
+        <br>
+    </div>
+</form>
+
+<h5>Car opportunity</h5>
+<form>
+    <div class="form-group">
+        <label for="option">Add New Car Opportunity</label>
+        <input type="text" class="form-control" placeholder="Enter..." #option>
+        <br>
+        <button type="button" class="btn btn-outline-success" (click) = "addOption(option.value)">Submit</button>
+    </div>
+</form>
+<div class="alert alert-info">
+
+
+<ul>
+    <li *ngFor = "let opt of options">{{opt}}
+        <button class="btn btn-warning btn-sm" (click) = "removeOption(opt)">x</button>
+    </li>
+</ul>
+</div>
+
+<div class="car-select">
+    <h5>Cars Selections</h5>
+    <button class="btn btn-danger" (click) = "carSelect('BMW')">BMW</button>
+    <button class="btn btn-success" (click) = "carSelect('Audi')">Audi</button>
+    <button class="btn btn-secondary" (click) = "carSelect('Merc')">Mercedes</button>
+</div>
+</div>

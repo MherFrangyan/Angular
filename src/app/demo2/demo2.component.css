@@ -1,0 +1,12 @@
+.car-select button{
+    margin-right: 10px;
+}
+.btn-sm{
+    margin-left:5px;
+    font-size: 12px;
+    padding:  2px 5px 5px;
+    line-height: 8px;
+}
+.container{
+    padding-bottom: 50px;
+}
